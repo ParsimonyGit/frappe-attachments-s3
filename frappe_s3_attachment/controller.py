@@ -233,7 +233,7 @@ def _upload_file_to_s3(file, s3=None):
     file.update(
         {
             "file_url": s3.get_file_url(key, file.file_name, file.is_private),
-            "folder": "Home/Attachments",
+            "folder": file.folder or "Home/Attachments",
             "old_parent": "Home/Attachments",
             "content_hash": "",
             "s3_file_key": key,
